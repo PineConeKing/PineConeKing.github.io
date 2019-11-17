@@ -151,6 +151,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python基础之JSON" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/17/Python%E5%9F%BA%E7%A1%80%E4%B9%8BJSON/">Python基础之JSON</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/17/Python%E5%9F%BA%E7%A1%80%E4%B9%8BJSON/" class="archive-article-date">
+  	<time datetime="2019-11-17T11:09:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>对Python对象进行序列化，便于存储和传输</p>
+<h1 id="Python对象与JSON字符串相互转换"><a href="#Python对象与JSON字符串相互转换" class="headerlink" title="Python对象与JSON字符串相互转换"></a>Python对象与JSON字符串相互转换</h1><h2 id="Python对象转JSON字符串"><a href="#Python对象转JSON字符串" class="headerlink" title="Python对象转JSON字符串"></a>Python对象转JSON字符串</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line">data = [ &#123; <span class="string">'a'</span> : <span class="number">1</span>, <span class="string">'b'</span> : <span class="number">2</span>, <span class="string">'c'</span> : <span class="number">3</span>, <span class="string">'d'</span> : <span class="number">4</span>, <span class="string">'e'</span> : <span class="number">5</span> &#125; ]</span><br><span class="line">json_str = json.dumps(data, ensure_ascii=<span class="literal">False</span>)  <span class="comment"># 设置ensure_ascii=False以支持中文</span></span><br><span class="line">print(type(json_str))</span><br><span class="line">print(json_str)</span><br><span class="line"></span><br><span class="line">结果是</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br><span class="line">[&#123;"a": 1, "b": 2, "c": 3, "d": 4, "e": 5&#125;]</span><br></pre></td></tr></table></figure>
+<h2 id="JSON字符串转Python对象"><a href="#JSON字符串转Python对象" class="headerlink" title="JSON字符串转Python对象"></a>JSON字符串转Python对象</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line">json_str = <span class="string">'[&#123;"a": 1, "b": 2, "c": 3, "d": 4, "e": 5&#125;]'</span></span><br><span class="line">data = json.loads(json_str)</span><br><span class="line">print(type(data))</span><br><span class="line">print(data)</span><br><span class="line"></span><br><span class="line">结果是</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">list</span>'&gt;</span></span><br><span class="line">[&#123;'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5&#125;]</span><br></pre></td></tr></table></figure>
+<h2 id="Python对象通过JSON往文件读写"><a href="#Python对象通过JSON往文件读写" class="headerlink" title="Python对象通过JSON往文件读写"></a>Python对象通过JSON往文件读写</h2><p>Python对象可与JSON字符串相互转换，字符串往文件读写按正常的就行了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/17/Python%E5%9F%BA%E7%A1%80%E4%B9%8BJSON/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python数据可视化之matplotlib" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -594,7 +660,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一个宅程序员的成长之路&lt;br&gt;&lt;br&gt;谢谢大家的关注</div>
   	  	
     	</section>
     
