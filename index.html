@@ -151,6 +151,159 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-一行Python能实现的神奇功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/20/%E4%B8%80%E8%A1%8CPython%E8%83%BD%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%A5%9E%E5%A5%87%E5%8A%9F%E8%83%BD/">一行Python能实现的神奇功能</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/20/%E4%B8%80%E8%A1%8CPython%E8%83%BD%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%A5%9E%E5%A5%87%E5%8A%9F%E8%83%BD/" class="archive-article-date">
+  	<time datetime="2019-11-20T14:48:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一行代码输出特定字符”Love”拼成的心形"><a href="#一行代码输出特定字符”Love”拼成的心形" class="headerlink" title="一行代码输出特定字符”Love”拼成的心形"></a>一行代码输出特定字符”Love”拼成的心形</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'\n'</span>.join([<span class="string">''</span>.join([(<span class="string">'Love'</span>[(x-y) % len(<span class="string">'Love'</span>)] <span class="keyword">if</span> ((x*<span class="number">0.05</span>)**<span class="number">2</span>+(y*<span class="number">0.1</span>)**<span class="number">2</span><span class="number">-1</span>)**<span class="number">3</span>-(x*<span class="number">0.05</span>)**<span class="number">2</span>*(y*<span class="number">0.1</span>)**<span class="number">3</span> &lt;= <span class="number">0</span> <span class="keyword">else</span> <span class="string">' '</span>) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-30</span>, <span class="number">30</span>)]) <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">30</span>, <span class="number">-30</span>, <span class="number">-1</span>)]))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">        veLoveLov           veLoveLov               </span><br><span class="line">    eLoveLoveLoveLove   eLoveLoveLoveLove           </span><br><span class="line">  veLoveLoveLoveLoveLoveLoveLoveLoveLoveLov         </span><br><span class="line"> veLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveL        </span><br><span class="line">veLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLov       </span><br><span class="line">eLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLove       </span><br><span class="line">LoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveL       </span><br><span class="line">oveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLo       </span><br><span class="line">veLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLov       </span><br><span class="line">eLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLove       </span><br><span class="line"> oveLoveLoveLoveLoveLoveLoveLoveLoveLoveLove        </span><br><span class="line">  eLoveLoveLoveLoveLoveLoveLoveLoveLoveLove         </span><br><span class="line">  LoveLoveLoveLoveLoveLoveLoveLoveLoveLoveL         </span><br><span class="line">    eLoveLoveLoveLoveLoveLoveLoveLoveLove           </span><br><span class="line">     oveLoveLoveLoveLoveLoveLoveLoveLove            </span><br><span class="line">      eLoveLoveLoveLoveLoveLoveLoveLove             </span><br><span class="line">        veLoveLoveLoveLoveLoveLoveLov               </span><br><span class="line">          oveLoveLoveLoveLoveLoveLo                 </span><br><span class="line">            LoveLoveLoveLoveLoveL                   </span><br><span class="line">               LoveLoveLoveLov                      </span><br><span class="line">                  LoveLoveL                         </span><br><span class="line">                     Lov                            </span><br><span class="line">                      v</span><br></pre></td></tr></table></figure>
+<h1 id="一行代码打印九九乘法表"><a href="#一行代码打印九九乘法表" class="headerlink" title="一行代码打印九九乘法表"></a>一行代码打印九九乘法表</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'\n'</span>.join([<span class="string">' '</span>.join([<span class="string">'%s*%s=%-2s'</span> % (y, x, x*y) <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">1</span>, x+<span class="number">1</span>)]) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>)]))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1*1=1 </span><br><span class="line">1*2=2  2*2=4 </span><br><span class="line">1*3=3  2*3=6  3*3=9 </span><br><span class="line">1*4=4  2*4=8  3*4=12 4*4=16</span><br><span class="line">1*5=5  2*5=10 3*5=15 4*5=20 5*5=25</span><br><span class="line">1*6=6  2*6=12 3*6=18 4*6=24 5*6=30 6*6=36</span><br><span class="line">1*7=7  2*7=14 3*7=21 4*7=28 5*7=35 6*7=42 7*7=49</span><br><span class="line">1*8=8  2*8=16 3*8=24 4*8=32 5*8=40 6*8=48 7*8=56 8*8=64</span><br><span class="line">1*9=9  2*9=18 3*9=27 4*9=36 5*9=45 6*9=54 7*9=63 8*9=72 9*9=81</span><br></pre></td></tr></table></figure>
+<h1 id="一行代码输出前10项斐波那契数列"><a href="#一行代码输出前10项斐波那契数列" class="headerlink" title="一行代码输出前10项斐波那契数列"></a>一行代码输出前10项斐波那契数列</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print([x[<span class="number">0</span>] <span class="keyword">for</span> x <span class="keyword">in</span> [(a[i][<span class="number">0</span>], a.append([a[i][<span class="number">1</span>], a[i][<span class="number">0</span>]+a[i][<span class="number">1</span>]])) <span class="keyword">for</span> a <span class="keyword">in</span> ([[<span class="number">1</span>, <span class="number">1</span>]], ) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]])</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]</span><br></pre></td></tr></table></figure>
+<h1 id="一行代码输出Mandelbrot图像（我觉得像只乌龟）"><a href="#一行代码输出Mandelbrot图像（我觉得像只乌龟）" class="headerlink" title="一行代码输出Mandelbrot图像（我觉得像只乌龟）"></a>一行代码输出Mandelbrot图像（我觉得像只乌龟）</h1><p>Mandelbrot图像中的每个位置都对应于公式N=x+y*i中的一个复数<br><img src="https://img-blog.csdnimg.cn/20191120222728409.jpg" alt="在这里插入图片描述"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'\n'</span>.join([<span class="string">''</span>.join([<span class="string">'*'</span><span class="keyword">if</span> abs((<span class="keyword">lambda</span> a: <span class="keyword">lambda</span> z, c, n: a(a, z, c, n))(<span class="keyword">lambda</span> s, z, c, n: z <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">else</span> s(s, z*z+c, c, n<span class="number">-1</span>))(<span class="number">0</span>, <span class="number">0.02</span>*x+<span class="number">0.05j</span>*y, <span class="number">40</span>)) &lt; <span class="number">2</span> <span class="keyword">else</span> <span class="string">' '</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-80</span>, <span class="number">20</span>)]) <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">-20</span>, <span class="number">20</span>)]))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">                                                                          **                        </span><br><span class="line">                                                                     ***********                    </span><br><span class="line">                                                                    ************                    </span><br><span class="line">                                                                      *********                     </span><br><span class="line">                                                            *    * ************  * *                </span><br><span class="line">                                                    ****** * *************************** *          </span><br><span class="line">                                                    *************************************** *****   </span><br><span class="line">                                                     *******************************************    </span><br><span class="line">                                               *** ******************************************** *   </span><br><span class="line">                                                **************************************************  </span><br><span class="line">                                             *******************************************************</span><br><span class="line">                      *        *              ***************************************************** </span><br><span class="line">                     **** ******* *          *******************************************************</span><br><span class="line">                      *****************     ******************************************************* </span><br><span class="line">                   *********************** *********************************************************</span><br><span class="line">                   *********************** ******************************************************** </span><br><span class="line">             **** ********************************************************************************  </span><br><span class="line">*********************************************************************************************       </span><br><span class="line">             **** ********************************************************************************  </span><br><span class="line">                   *********************** ******************************************************** </span><br><span class="line">                   *********************** *********************************************************</span><br><span class="line">                      *****************     ******************************************************* </span><br><span class="line">                     **** ******* *          *******************************************************</span><br><span class="line">                      *        *              ***************************************************** </span><br><span class="line">                                             *******************************************************</span><br><span class="line">                                                **************************************************  </span><br><span class="line">                                               *** ******************************************** *   </span><br><span class="line">                                                     *******************************************    </span><br><span class="line">                                                    *************************************** *****   </span><br><span class="line">                                                    ****** * *************************** *          </span><br><span class="line">                                                            *    * ************  * *                </span><br><span class="line">                                                                      *********                     </span><br><span class="line">                                                                    ************                    </span><br><span class="line">                                                                     ***********                    </span><br><span class="line">                                                                          **</span><br></pre></td></tr></table></figure>
+<h1 id="一行代码输出漂亮的菱形"><a href="#一行代码输出漂亮的菱形" class="headerlink" title="一行代码输出漂亮的菱形"></a>一行代码输出漂亮的菱形</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[print(<span class="string">'\n'</span>.join(<span class="string">" "</span>*abs(i)+<span class="string">"* "</span>*(n-abs(i))<span class="keyword">for</span> i <span class="keyword">in</span> range(-n+<span class="number">1</span>,n))) <span class="keyword">for</span> n <span class="keyword">in</span>[<span class="number">9</span>]]</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">        * </span><br><span class="line">       * * </span><br><span class="line">      * * * </span><br><span class="line">     * * * * </span><br><span class="line">    * * * * * </span><br><span class="line">   * * * * * * </span><br><span class="line">  * * * * * * * </span><br><span class="line"> * * * * * * * * </span><br><span class="line">* * * * * * * * * </span><br><span class="line"> * * * * * * * * </span><br><span class="line">  * * * * * * * </span><br><span class="line">   * * * * * * </span><br><span class="line">    * * * * * </span><br><span class="line">     * * * * </span><br><span class="line">      * * * </span><br><span class="line">       * * </span><br><span class="line">        *</span><br></pre></td></tr></table></figure>
+<h1 id="一行代码输出1-100之间的素数"><a href="#一行代码输出1-100之间的素数" class="headerlink" title="一行代码输出1-100之间的素数"></a>一行代码输出1-100之间的素数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">' '</span>.join([str(item) <span class="keyword">for</span> item <span class="keyword">in</span> filter(<span class="keyword">lambda</span> x: all(map(<span class="keyword">lambda</span> p: x % p != <span class="number">0</span>, range(<span class="number">2</span>, x))), range(<span class="number">2</span>, <span class="number">101</span>))]))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/20/%E4%B8%80%E8%A1%8CPython%E8%83%BD%E5%AE%9E%E7%8E%B0%E7%9A%84%E7%A5%9E%E5%A5%87%E5%8A%9F%E8%83%BD/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-虚幻4-UE4-蓝图之关卡蓝图实现自动开关门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/19/%E8%99%9A%E5%B9%BB4-UE4-%E8%93%9D%E5%9B%BE%E4%B9%8B%E5%85%B3%E5%8D%A1%E8%93%9D%E5%9B%BE%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%BC%80%E5%85%B3%E9%97%A8/">虚幻4 UE4 蓝图之关卡蓝图实现自动开关门</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/19/%E8%99%9A%E5%B9%BB4-UE4-%E8%93%9D%E5%9B%BE%E4%B9%8B%E5%85%B3%E5%8D%A1%E8%93%9D%E5%9B%BE%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%BC%80%E5%85%B3%E9%97%A8/" class="archive-article-date">
+  	<time datetime="2019-11-19T15:52:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h1><p><img src="https://img-blog.csdnimg.cn/20191117225100414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="往关卡中放置一个门"><a href="#往关卡中放置一个门" class="headerlink" title="往关卡中放置一个门"></a>往关卡中放置一个门</h1><p>在内容浏览器中找到 门 的静态网格体<br><img src="https://img-blog.csdnimg.cn/20191117225314271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>拖放到关卡中<br><img src="https://img-blog.csdnimg.cn/2019111722533813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时门默认没有碰撞，人物可以直接穿过<br><img src="https://img-blog.csdnimg.cn/20191117225646393.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="给门添加碰撞"><a href="#给门添加碰撞" class="headerlink" title="给门添加碰撞"></a>给门添加碰撞</h1><p>双击内容管理器中的 SM_Door，打开编辑窗口<br><img src="https://img-blog.csdnimg.cn/20191117225754149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择菜单“碰撞”-“添加盒体简化碰撞”，给门添加碰撞框架<br><img src="https://img-blog.csdnimg.cn/2019111722594532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>门周围的绿边框即是碰撞区域<br><img src="https://img-blog.csdnimg.cn/20191117230106833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>通过缩放调整碰撞区域使其与门基本匹配<br><img src="https://img-blog.csdnimg.cn/20191117230300478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>添加碰撞后保存，进入关卡可以发现人物已经无法穿过门<br><img src="https://img-blog.csdnimg.cn/2019111723040961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="添加触发器"><a href="#添加触发器" class="headerlink" title="添加触发器"></a>添加触发器</h1><p>将盒体触发器拖入关卡中<br><img src="https://img-blog.csdnimg.cn/20191117230606449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191117230656794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>调整触发器大小及位置<br><img src="https://img-blog.csdnimg.cn/20191117230820815.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="将门设置为可移动"><a href="#将门设置为可移动" class="headerlink" title="将门设置为可移动"></a>将门设置为可移动</h1><p>选中门，在细节面板中“变换”-“移动性”-切换为“可移动”<br><img src="https://img-blog.csdnimg.cn/2019111723112659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="编辑关卡蓝图"><a href="#编辑关卡蓝图" class="headerlink" title="编辑关卡蓝图"></a>编辑关卡蓝图</h1><p>操作快捷菜单“蓝图”-“打开关卡蓝图”<br><img src="https://img-blog.csdnimg.cn/20191117231304702.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2019111723151058.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="添加触发器事件"><a href="#添加触发器事件" class="headerlink" title="添加触发器事件"></a>添加触发器事件</h2><p>从世界大纲视图中选中触发器对象“TriggerBox”<br><img src="https://img-blog.csdnimg.cn/2019111723222455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在空白处右键，添加 Begin Overlap 和 End Overlap 两个事件<br><img src="https://img-blog.csdnimg.cn/20191117232321578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="添加Rotation设置蓝图"><a href="#添加Rotation设置蓝图" class="headerlink" title="添加Rotation设置蓝图"></a>添加Rotation设置蓝图</h2><p>从世界大纲中将门的对象 SM_Door 拖进关卡蓝图<br><img src="https://img-blog.csdnimg.cn/20191117232507427.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>从 SM_Door 拖出节点 SetActorRotation<br><img src="https://img-blog.csdnimg.cn/20191117232736183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="添加时间轴蓝图"><a href="#添加时间轴蓝图" class="headerlink" title="添加时间轴蓝图"></a>添加时间轴蓝图</h2><p>在空白处右键，搜索timeline，添加时间轴<br><img src="https://img-blog.csdnimg.cn/20191117233247412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>双击打开时间轴，选择“添加浮点型轨迹”<br><img src="https://img-blog.csdnimg.cn/20191117233406232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>右键-添加关键帧，或按Shift+左键直接添加，添加两个关键帧<br><img src="https://img-blog.csdnimg.cn/20191117233603312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选中关键帧，直接设定相应的值，这里我设置第一个关键帧 0s，值0；第二个关键帧2s，值85<br><img src="https://img-blog.csdnimg.cn/20191117233814679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>觉得变化太生硬可以同时选中两个关键帧，右键，关键帧插值-勾上“自动”即可<br><img src="https://img-blog.csdnimg.cn/20191117234004597.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>修改时间总长度，要与实际最开始的帧到最末尾的帧时间差相等<br><img src="https://img-blog.csdnimg.cn/20191117234255376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="连接所有蓝图"><a href="#连接所有蓝图" class="headerlink" title="连接所有蓝图"></a>连接所有蓝图</h2><p>将 SetActorRotation 中的 New Rotation 结构体分割开来，方便单独赋值<br><img src="https://img-blog.csdnimg.cn/20191117234652593.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>最后，蓝图连线<br><img src="https://img-blog.csdnimg.cn/20191117234756596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>编译关卡蓝图后生效，运行关卡可以看到实现自动开关门<br><img src="https://img-blog.csdnimg.cn/20191117234929708.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/19/%E8%99%9A%E5%B9%BB4-UE4-%E8%93%9D%E5%9B%BE%E4%B9%8B%E5%85%B3%E5%8D%A1%E8%93%9D%E5%9B%BE%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%BC%80%E5%85%B3%E9%97%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python常用模块logging——日志输出" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -530,78 +683,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/11/18/Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B9%8B%E9%9A%BE%E7%82%B9%E5%A4%87%E5%BF%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-虚幻4-UE4-蓝图之关卡蓝图实现自动开关门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/17/%E8%99%9A%E5%B9%BB4-UE4-%E8%93%9D%E5%9B%BE%E4%B9%8B%E5%85%B3%E5%8D%A1%E8%93%9D%E5%9B%BE%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%BC%80%E5%85%B3%E9%97%A8/">虚幻4 UE4 蓝图之关卡蓝图实现自动开关门</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/17/%E8%99%9A%E5%B9%BB4-UE4-%E8%93%9D%E5%9B%BE%E4%B9%8B%E5%85%B3%E5%8D%A1%E8%93%9D%E5%9B%BE%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%BC%80%E5%85%B3%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2019-11-17T15:52:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h1><p><img src="https://img-blog.csdnimg.cn/20191117225100414.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="往关卡中放置一个门"><a href="#往关卡中放置一个门" class="headerlink" title="往关卡中放置一个门"></a>往关卡中放置一个门</h1><p>在内容浏览器中找到 门 的静态网格体<br><img src="https://img-blog.csdnimg.cn/20191117225314271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>拖放到关卡中<br><img src="https://img-blog.csdnimg.cn/2019111722533813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时门默认没有碰撞，人物可以直接穿过<br><img src="https://img-blog.csdnimg.cn/20191117225646393.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="给门添加碰撞"><a href="#给门添加碰撞" class="headerlink" title="给门添加碰撞"></a>给门添加碰撞</h1><p>双击内容管理器中的 SM_Door，打开编辑窗口<br><img src="https://img-blog.csdnimg.cn/20191117225754149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择菜单“碰撞”-“添加盒体简化碰撞”，给门添加碰撞框架<br><img src="https://img-blog.csdnimg.cn/2019111722594532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>门周围的绿边框即是碰撞区域<br><img src="https://img-blog.csdnimg.cn/20191117230106833.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>通过缩放调整碰撞区域使其与门基本匹配<br><img src="https://img-blog.csdnimg.cn/20191117230300478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>添加碰撞后保存，进入关卡可以发现人物已经无法穿过门<br><img src="https://img-blog.csdnimg.cn/2019111723040961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="添加触发器"><a href="#添加触发器" class="headerlink" title="添加触发器"></a>添加触发器</h1><p>将盒体触发器拖入关卡中<br><img src="https://img-blog.csdnimg.cn/20191117230606449.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191117230656794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>调整触发器大小及位置<br><img src="https://img-blog.csdnimg.cn/20191117230820815.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="将门设置为可移动"><a href="#将门设置为可移动" class="headerlink" title="将门设置为可移动"></a>将门设置为可移动</h1><p>选中门，在细节面板中“变换”-“移动性”-切换为“可移动”<br><img src="https://img-blog.csdnimg.cn/2019111723112659.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="编辑关卡蓝图"><a href="#编辑关卡蓝图" class="headerlink" title="编辑关卡蓝图"></a>编辑关卡蓝图</h1><p>操作快捷菜单“蓝图”-“打开关卡蓝图”<br><img src="https://img-blog.csdnimg.cn/20191117231304702.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2019111723151058.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="添加触发器事件"><a href="#添加触发器事件" class="headerlink" title="添加触发器事件"></a>添加触发器事件</h2><p>从世界大纲视图中选中触发器对象“TriggerBox”<br><img src="https://img-blog.csdnimg.cn/2019111723222455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在空白处右键，添加 Begin Overlap 和 End Overlap 两个事件<br><img src="https://img-blog.csdnimg.cn/20191117232321578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="添加Rotation设置蓝图"><a href="#添加Rotation设置蓝图" class="headerlink" title="添加Rotation设置蓝图"></a>添加Rotation设置蓝图</h2><p>从世界大纲中将门的对象 SM_Door 拖进关卡蓝图<br><img src="https://img-blog.csdnimg.cn/20191117232507427.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>从 SM_Door 拖出节点 SetActorRotation<br><img src="https://img-blog.csdnimg.cn/20191117232736183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="添加时间轴蓝图"><a href="#添加时间轴蓝图" class="headerlink" title="添加时间轴蓝图"></a>添加时间轴蓝图</h2><p>在空白处右键，搜索timeline，添加时间轴<br><img src="https://img-blog.csdnimg.cn/20191117233247412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>双击打开时间轴，选择“添加浮点型轨迹”<br><img src="https://img-blog.csdnimg.cn/20191117233406232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>右键-添加关键帧，或按Shift+左键直接添加，添加两个关键帧<br><img src="https://img-blog.csdnimg.cn/20191117233603312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选中关键帧，直接设定相应的值，这里我设置第一个关键帧 0s，值0；第二个关键帧2s，值85<br><img src="https://img-blog.csdnimg.cn/20191117233814679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>觉得变化太生硬可以同时选中两个关键帧，右键，关键帧插值-勾上“自动”即可<br><img src="https://img-blog.csdnimg.cn/20191117234004597.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>修改时间总长度，要与实际最开始的帧到最末尾的帧时间差相等<br><img src="https://img-blog.csdnimg.cn/20191117234255376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="连接所有蓝图"><a href="#连接所有蓝图" class="headerlink" title="连接所有蓝图"></a>连接所有蓝图</h2><p>将 SetActorRotation 中的 New Rotation 结构体分割开来，方便单独赋值<br><img src="https://img-blog.csdnimg.cn/20191117234652593.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>最后，蓝图连线<br><img src="https://img-blog.csdnimg.cn/20191117234756596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>编译关卡蓝图后生效，运行关卡可以看到实现自动开关门<br><img src="https://img-blog.csdnimg.cn/20191117234929708.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjE0NTUxNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/17/%E8%99%9A%E5%B9%BB4-UE4-%E8%93%9D%E5%9B%BE%E4%B9%8B%E5%85%B3%E5%8D%A1%E8%93%9D%E5%9B%BE%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%BC%80%E5%85%B3%E9%97%A8/">展开全文 >></a>
         </p>
       
 
