@@ -9,13 +9,14 @@
   <title>Python基础知识之难点备忘 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="零散知识点12345678dir(obj)            	# 返回一个列表，列出对象obj的所有方法名称isinstance(obj, list)	# 判断obj是否为list类型ord(&amp;apos;a&amp;apos;)				# 将字符转ASCII码chr(97)					# 将ASCII码转字符hex(I), oct(I), bin(I)	# 进制转换成十六进制、八进制、二进制，但要注意返回的是字符串int">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础知识之难点备忘">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;18&#x2F;Python%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B9%8B%E9%9A%BE%E7%82%B9%E5%A4%87%E5%BF%98&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="零散知识点12345678dir(obj)            	# 返回一个列表，列出对象obj的所有方法名称isinstance(obj, list)	# 判断obj是否为list类型ord(&amp;apos;a&amp;apos;)				# 将字符转ASCII码chr(97)					# 将ASCII码转字符hex(I), oct(I), bin(I)	# 进制转换成十六进制、八进制、二进制，但要注意返回的是字符串int">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-19T10:26:44.002Z">
+<meta property="og:updated_time" content="2019-11-22T11:15:17.301Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -173,9 +174,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="零散知识点"><a href="#零散知识点" class="headerlink" title="零散知识点"></a>零散知识点</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dir(obj)            	<span class="comment"># 返回一个列表，列出对象obj的所有方法名称</span></span><br><span class="line">isinstance(obj, list)	<span class="comment"># 判断obj是否为list类型</span></span><br><span class="line"></span><br><span class="line">ord(<span class="string">'a'</span>)				<span class="comment"># 将字符转ASCII码</span></span><br><span class="line">chr(<span class="number">97</span>)					<span class="comment"># 将ASCII码转字符</span></span><br><span class="line"></span><br><span class="line">hex(I), oct(I), bin(I)	<span class="comment"># 进制转换成十六进制、八进制、二进制，但要注意返回的是字符串</span></span><br><span class="line">int(string, base)		<span class="comment"># 将字符串转化为整数，base为进制数</span></span><br></pre></td></tr></table></figure>
-<h1 id="print输出到日志文件"><a href="#print输出到日志文件" class="headerlink" title="print输出到日志文件"></a>print输出到日志文件</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sys.stdout = open(<span class="string">'log.txt'</span>, <span class="string">'a'</span>)      <span class="comment"># 流的重定向</span></span><br><span class="line">print(<span class="string">'hello world'</span>)                   <span class="comment"># 输出到文件log.txt</span></span><br><span class="line">sys.stdout.close()</span><br></pre></td></tr></table></figure>
-<h1 id="函数注解"><a href="#函数注解" class="headerlink" title="函数注解"></a>函数注解</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#写在def定义行，用于可以接字符串、元组和类型等</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a:<span class="string">'spam'</span>, b:<span class="params">(<span class="number">1</span>, <span class="number">10</span>)</span>, c:float)</span> -&gt; int :</span></span><br><span class="line">    print(a, b, c)</span><br><span class="line">func.__annotations__               <span class="comment"># 返回&#123;'c':&lt;class 'float'&gt;, 'b':(1, 10), 'a':'spam', 'return':&lt;class 'int'&gt;&#125;</span></span><br><span class="line"><span class="comment"># 编写注解的同时还可以使用函数默认值，默认值写在注解后面</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a:<span class="string">'spam'</span>=<span class="string">'a'</span>, b:<span class="params">(<span class="number">1</span>, <span class="number">10</span>)</span>=<span class="number">2</span>, c:float=<span class="number">3</span>)</span> -&gt; int :</span></span><br><span class="line">    print(a, b, c)</span><br></pre></td></tr></table></figure>
+<h1 id="print输出重定向到日志文件"><a href="#print输出重定向到日志文件" class="headerlink" title="print输出重定向到日志文件"></a>print输出重定向到日志文件</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sys.stdout = open(<span class="string">'log.txt'</span>, <span class="string">'a'</span>)      <span class="comment"># 流的重定向</span></span><br><span class="line">print(<span class="string">'hello world'</span>)                   <span class="comment"># 输出到文件log.txt</span></span><br><span class="line">sys.stdout.close()</span><br></pre></td></tr></table></figure>
+<h1 id="函数注解"><a href="#函数注解" class="headerlink" title="函数注解"></a>函数注解</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 写在def定义行，用于可以接字符串、元组和类型等</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a:<span class="string">'spam'</span>, b:<span class="params">(<span class="number">1</span>, <span class="number">10</span>)</span>, c:float)</span> -&gt; int :</span></span><br><span class="line">    print(a, b, c)</span><br><span class="line">func.__annotations__               <span class="comment"># 返回&#123;'c':&lt;class 'float'&gt;, 'b':(1, 10), 'a':'spam', 'return':&lt;class 'int'&gt;&#125;</span></span><br><span class="line"><span class="comment"># 编写注解的同时还可以使用函数默认值，默认值写在注解后面</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a:<span class="string">'spam'</span>=<span class="string">'a'</span>, b:<span class="params">(<span class="number">1</span>, <span class="number">10</span>)</span>=<span class="number">2</span>, c:float=<span class="number">3</span>)</span> -&gt; int :</span></span><br><span class="line">    print(a, b, c)</span><br></pre></td></tr></table></figure>
 <h1 id="函数默认参数为可变类型"><a href="#函数默认参数为可变类型" class="headerlink" title="函数默认参数为可变类型"></a>函数默认参数为可变类型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#函数的默认值是在函数定义的时候实例化的 而不是在调用的时候，因此每次调用函数时使用的是同一个对象</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(numbers=[])</span>:</span></span><br><span class="line">	numbers.append(<span class="number">9</span>)    </span><br><span class="line">    print(numbers)</span><br><span class="line">foo()	<span class="comment"># 返回[9]</span></span><br><span class="line">foo()	<span class="comment"># 返回[9, 9]</span></span><br><span class="line">foo()	<span class="comment"># 返回[9, 9, 9]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>想进一步了解编程开发相关知识，与我一同成长进步，请关注我的公众号“松果仓库”，共同分享宅&amp;程序员的各类资源，谢谢！！！</p>
+</blockquote>
+
       
 
       
@@ -204,6 +209,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -398,6 +414,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Python</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
