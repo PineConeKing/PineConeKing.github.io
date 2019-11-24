@@ -151,6 +151,105 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python常用模块之os-与操作系统交互" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/24/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97%E4%B9%8Bos-%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92/">Python常用模块之os--与操作系统交互</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/24/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97%E4%B9%8Bos-%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92/" class="archive-article-date">
+  	<time datetime="2019-11-24T14:15:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="os-getcwd"><a href="#os-getcwd" class="headerlink" title="os.getcwd()"></a>os.getcwd()</h1><p>返回当前工作目录绝对路径</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)] on win32</span><br><span class="line">Type "copyright", "credits" or "license()" for more information.</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(os.getcwd())</span></span><br><span class="line">C:\Users\28914\AppData\Local\Programs\Python\Python37</span><br></pre></td></tr></table></figure>
+<h1 id="os-chdir-newpath"><a href="#os-chdir-newpath" class="headerlink" title="os.chdir(newpath)"></a>os.chdir(newpath)</h1><p>更改当前工作目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(os.getcwd())</span></span><br><span class="line">C:\Users\28914\AppData\Local\Programs\Python\Python37</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.chdir(<span class="string">"C:\\"</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(os.getcwd())</span></span><br><span class="line">C:\</span><br></pre></td></tr></table></figure>
+<h1 id="os-mkdir-dirpath"><a href="#os-mkdir-dirpath" class="headerlink" title="os.mkdir(dirpath)"></a>os.mkdir(dirpath)</h1><p>创建单级目录，其父目录必须存在，否则应使用os.makedirs()创建多级目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.mkdir(<span class="string">"test1"</span>)</span></span><br></pre></td></tr></table></figure>
+<h1 id="os-makedirs-dirpath1-dirpath2"><a href="#os-makedirs-dirpath1-dirpath2" class="headerlink" title="os.makedirs(dirpath1\dirpath2)"></a>os.makedirs(dirpath1\dirpath2)</h1><p>创建多级目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.makedirs(<span class="string">"test2\\test3"</span>)</span></span><br></pre></td></tr></table></figure>
+<h1 id="os-removedirs-dirpath-filename"><a href="#os-removedirs-dirpath-filename" class="headerlink" title="os.removedirs(dirpath\filename)"></a>os.removedirs(dirpath\filename)</h1><p>删除空目录，并递归到上一级目录，如若上一级目录也为空，则也删除，以此类推，最下层目录非空则报错</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.removedirs(<span class="string">"test2\\test3"</span>)</span></span><br></pre></td></tr></table></figure>
+<h1 id="os-remove-filepath"><a href="#os-remove-filepath" class="headerlink" title="os.remove(filepath)"></a>os.remove(filepath)</h1><p>删除文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.remove(<span class="string">"test.txt"</span>)</span></span><br></pre></td></tr></table></figure>
+<h1 id="os-listdir-dirpath"><a href="#os-listdir-dirpath" class="headerlink" title="os.listdir(dirpath)"></a>os.listdir(dirpath)</h1><p>返回一个列表，列出文件夹内所有文件及子文件夹的名称</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.listdir(<span class="string">"C:\\"</span>)</span></span><br><span class="line">['$360Section', '$Recycle.Bin', '360RecoveryEnv', '360Safe', '360SANDBOX', 'aow_drv.log', 'bootmgr', 'Config.Msi', 'Documents and Settings', 'hiberfil.sys', 'Intel', 'pagefile.sys', 'Program Files', 'Program Files (x86)', 'ProgramData', 'QMDownload', 'QMProxyAccelGameList.dat', 'Qt', 'Recovery', 'Strawberry', 'swapfile.sys', 'System Volume Information', 'temp', 'Users', 'Windows']</span><br></pre></td></tr></table></figure>
+<h1 id="os-walk-dirpath"><a href="#os-walk-dirpath" class="headerlink" title="os.walk(dirpath)"></a>os.walk(dirpath)</h1><p>返回一个生成器，遍历文件夹及其所有子孙文件夹内所有文件夹及文件<br>每一项为一个路径信息的元组，元组第一项为该绝对路径，第二项为该路径下文件夹的列表，第三项为该路径下文件的列表</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="keyword">for</span> item <span class="keyword">in</span> os.walk(r<span class="string">"E:\素材"</span>):</span></span><br><span class="line">	print(item)</span><br><span class="line"></span><br><span class="line">('E:\\素材', ['游戏人生', '表情包'], ['035曦红柿【人女】导入图.jpg', 'code-wallpaper-8.jpg'])</span><br><span class="line">('E:\\素材\\游戏人生', ['图片'], [])</span><br><span class="line">('E:\\素材\\游戏人生\\图片', [], ['5ab5c9ea15ce36d380894f9931f33a87e850b18e.jpg', '7af40ad162d9f2d387245a7fa2ec8a136327cc6d.jpg', 'c64edcc451da81cb9482033c5e66d016082431ff.jpg'])</span><br></pre></td></tr></table></figure>
+<h1 id="os-rename-oldname-newname"><a href="#os-rename-oldname-newname" class="headerlink" title="os.rename(oldname,newname)"></a>os.rename(oldname,newname)</h1><p>重命名文件或目录</p>
+<h1 id="os-stat-filepath"><a href="#os-stat-filepath" class="headerlink" title="os.stat(filepath)"></a>os.stat(filepath)</h1><p>返回文件属性信息对象</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt;&gt; os.stat(<span class="string">"C:\\aow_drv.log"</span>)</span></span><br><span class="line">os.stat_result(st_mode=33206, st_ino=41376821576981610, st_dev=2818738962, st_nlink=1, st_uid=0, st_gid=0, st_size=4429383, st_atime=1556684018, st_mtime=1556684018, st_ctime=1556619281)</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; state = os.stat(<span class="string">"C:\\aow_drv.log"</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; state.st_mode</span></span><br><span class="line">33206</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; state.st_size</span></span><br><span class="line">4429383</span><br></pre></td></tr></table></figure>
+<h1 id="os-system-command"><a href="#os-system-command" class="headerlink" title="os.system(command)"></a>os.system(command)</h1><p>运行系统命令，在Windows中相当于cmd命令，命令成功执行则返回0，否则返回1</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.system(<span class="string">"Notepad.exe"</span>)</span></span><br></pre></td></tr></table></figure>
+<h1 id="os-popen-command"><a href="#os-popen-command" class="headerlink" title="os.popen(command)"></a>os.popen(command)</h1><p>同样是运行系统命令，但返回执行结果内容，通过 .read() 获取</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; result = os.popen(<span class="string">"ipconfig"</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; result.read()</span></span><br><span class="line">'\nWindows IP 配置\n\n\n以太网适配器 以太网:\n\n   媒体状态  . . . . . . . . . . . . : 媒体已断开连接\n   连接特定的 DNS 后缀 . . . . . . . : \n\n以太网适配器 VirtualBox Host-Only Network:\n\n   连接特定的 DNS 后缀 . . . . . . . : \n   本地链接 IPv6 地址. . . . . . . . : fe80::61c7:10ea:8fe9:d802%9\n   IPv4 地址 . . . . . . . . . . . . : 192.168.56.1\n   子网掩码  . . . . . . . . . . . . : 255.255.255.0\n   默认网关. . . . . . . . . . . . . : \n\n无线局域网适配器 本地连接* 1:\n\n   媒体状态  . . . . . . . . . . . . : 媒体已断开连接\n   连接特定的 DNS 后缀 . . . . . . . : \n\n无线局域网适配器 本地连接* 2:\n\n   媒体状态  . . . . . . . . . . . . : 媒体已断开连接\n   连接特定的 DNS 后缀 . . . . . . . : \n\n无线局域网适配器 WLAN:\n\n   连接特定的 DNS 后缀 . . . . . . . : lan\n   本地链接 IPv6 地址. . . . . . . . : fe80::fd93:45be:3220:a352%5\n   IPv4 地址 . . . . . . . . . . . . : 10.10.10.144\n   子网掩码  . . . . . . . . . . . . : 255.255.255.0\n   默认网关. . . . . . . . . . . . . : 10.10.10.1\n\n以太网适配器 蓝牙网络连接:\n\n   媒体状态  . . . . . . . . . . . . : 媒体已断开连接\n   连接特定的 DNS 后缀 . . . . . . . : \n'</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>想进一步了解编程开发相关知识，与我一同成长进步，请关注我的公众号“松果仓库”，共同分享宅&amp;程序员的各类资源，谢谢！！！</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/24/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97%E4%B9%8Bos-%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python自动化办公之操作Excel文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
