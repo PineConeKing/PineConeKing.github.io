@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python常用模块os.path——文件与路径操作 | 松鼠大帝</title>
+  <title>Python常用模块pickle——序列化数据 | 松鼠大帝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="os.path.abspath(path)输入相对路径，返回绝对路径 123&amp;gt;&amp;gt;&amp;gt; import os&amp;gt;&amp;gt;&amp;gt; print(os.path.abspath(&quot;.&quot;))C:\Users\AppData\Local\Programs\Python\Python37  os.path.basename(path)返回路径最后的文件或目录名，单纯的字符串处理，不会管该路径">
+  <meta name="description" content="作用对Python对象进行序列化，便于存储和传输 Python对象序列化成bytes类型pickle.dumps(obj)   将Python对象转化为bytes类型pickle.loads(str)    将转化成的bytes类型数据还原成对象 12345678&amp;gt;&amp;gt;&amp;gt; import pickle&amp;gt;&amp;gt;&amp;gt; mydict = &amp;#123;&amp;apos;id&amp;apos;:123, &amp;apos;nam">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python常用模块os.path——文件与路径操作">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;14&#x2F;Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97os.path%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8E%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C&#x2F;index.html">
+<meta property="og:title" content="Python常用模块pickle——序列化数据">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;18&#x2F;Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97pickle%E2%80%94%E2%80%94%E5%BA%8F%E5%88%97%E5%8C%96%E6%95%B0%E6%8D%AE&#x2F;index.html">
 <meta property="og:site_name" content="松鼠大帝">
-<meta property="og:description" content="os.path.abspath(path)输入相对路径，返回绝对路径 123&amp;gt;&amp;gt;&amp;gt; import os&amp;gt;&amp;gt;&amp;gt; print(os.path.abspath(&quot;.&quot;))C:\Users\AppData\Local\Programs\Python\Python37  os.path.basename(path)返回路径最后的文件或目录名，单纯的字符串处理，不会管该路径">
+<meta property="og:description" content="作用对Python对象进行序列化，便于存储和传输 Python对象序列化成bytes类型pickle.dumps(obj)   将Python对象转化为bytes类型pickle.loads(str)    将转化成的bytes类型数据还原成对象 12345678&amp;gt;&amp;gt;&amp;gt; import pickle&amp;gt;&amp;gt;&amp;gt; mydict = &amp;#123;&amp;apos;id&amp;apos;:123, &amp;apos;nam">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-14T10:45:00.679Z">
+<meta property="og:updated_time" content="2020-01-18T12:09:38.739Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="松鼠大帝" type="application/atom+xml">
@@ -157,60 +157,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python常用模块os.path——文件与路径操作" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Python常用模块pickle——序列化数据" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python常用模块os.path——文件与路径操作
+      Python常用模块pickle——序列化数据
     </h1>
   
 
         
-        <a href="/2020/01/14/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97os.path%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8E%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2020-01-14T10:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-14</time>
+        <a href="/2020/01/18/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97pickle%E2%80%94%E2%80%94%E5%BA%8F%E5%88%97%E5%8C%96%E6%95%B0%E6%8D%AE/" class="archive-article-date">
+  	<time datetime="2020-01-18T05:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="os-path-abspath-path"><a href="#os-path-abspath-path" class="headerlink" title="os.path.abspath(path)"></a>os.path.abspath(path)</h1><p>输入相对路径，返回绝对路径</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(os.path.abspath(<span class="string">"."</span>))</span></span><br><span class="line">C:\Users\AppData\Local\Programs\Python\Python37</span><br></pre></td></tr></table></figure>
+        <h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>对Python对象进行序列化，便于存储和传输</p>
+<h1 id="Python对象序列化成bytes类型"><a href="#Python对象序列化成bytes类型" class="headerlink" title="Python对象序列化成bytes类型"></a>Python对象序列化成bytes类型</h1><p>pickle.dumps(obj)   将Python对象转化为bytes类型<br>pickle.loads(str)    将转化成的bytes类型数据还原成对象</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import pickle</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; mydict = &#123;<span class="string">'id'</span>:123, <span class="string">'name'</span>:<span class="string">'abc'</span>&#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; pickle_str = pickle.dumps(mydict)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; pickle_str</span></span><br><span class="line">b'\x80\x03&#125;q\x00(X\x02\x00\x00\x00idq\x01K&#123;X\x04\x00\x00\x00nameq\x02X\x03\x00\x00\x00abcq\x03u.'</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; newdict = pickle.loads(pickle_str)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; newdict</span></span><br><span class="line">&#123;'id': 123, 'name': 'abc'&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="os-path-basename-path"><a href="#os-path-basename-path" class="headerlink" title="os.path.basename(path)"></a>os.path.basename(path)</h1><p>返回路径最后的文件或目录名，单纯的字符串处理，不会管该路径是否存在</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.path.basename(<span class="string">"E:\\abc\\efg.txt"</span>)</span></span><br><span class="line">'efg.txt'</span><br></pre></td></tr></table></figure>
+<h1 id="Python对象序列化写入文件"><a href="#Python对象序列化写入文件" class="headerlink" title="Python对象序列化写入文件"></a>Python对象序列化写入文件</h1><p>pickle.dump(obj, file)<br>可以存储多个对象，读取时按存储顺序读取</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import pickle</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; mydict = &#123;<span class="string">'id'</span>:123, <span class="string">'name'</span>:<span class="string">'abc'</span>&#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; file = open(<span class="string">'pickle.txt'</span>,<span class="string">'wb'</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; pickle.dump(mydict, file)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; file.close()</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="os-path-dirname-path"><a href="#os-path-dirname-path" class="headerlink" title="os.path.dirname(path)"></a>os.path.dirname(path)</h1><p>和os.path.basename相反，返回路径中去除了最后的文件或目录名后的部分，也是单纯的字符串处理</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.path.dirname(<span class="string">"E:\\abc\\efg.txt"</span>)   </span></span><br><span class="line">'E:\\abc'</span><br></pre></td></tr></table></figure>
-
-<h1 id="os-path-split-path"><a href="#os-path-split-path" class="headerlink" title="os.path.split(path)"></a>os.path.split(path)</h1><p>单纯的字符串处理，分割路径，返回由其目录名和文件名组成的元组</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.path.split(<span class="string">"E:\\abc\\efg.txt"</span>)   </span></span><br><span class="line">('E:\\abc', 'efg.txt')</span><br></pre></td></tr></table></figure>
-
-<h1 id="os-path-splitext-path"><a href="#os-path-splitext-path" class="headerlink" title="os.path.splitext(path)"></a>os.path.splitext(path)</h1><p>单纯的字符串处理，分割路径，返回由其文件名和扩展名组成的元组</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.path.splitext(<span class="string">"E:\\abc\\efg.txt"</span>)   </span></span><br><span class="line">('E:\\abc\\efg', '.txt')</span><br></pre></td></tr></table></figure>
-
-<h1 id="os-path-join-dirpath-filename"><a href="#os-path-join-dirpath-filename" class="headerlink" title="os.path.join(dirpath,filename)"></a>os.path.join(dirpath,filename)</h1><p>将路径与文件名拼接，根据操作系统自动使用相应的路径分隔符，Windows用“\”，Linux用“/”</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.path.join(<span class="string">'E:\\abc\\efg'</span>, <span class="string">'.txt'</span>)   </span></span><br><span class="line">('E:\\abc\\efg.txt')</span><br></pre></td></tr></table></figure>
-
-<h1 id="os-path-exists-path"><a href="#os-path-exists-path" class="headerlink" title="os.path.exists(path)"></a>os.path.exists(path)</h1><p>判断文件或目录是否存在，返回True或False</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.path.exists(<span class="string">"E:\\abc\\efg.txt"</span>)</span></span><br><span class="line">False</span><br></pre></td></tr></table></figure>
-
-<h1 id="os-path-isdir-path"><a href="#os-path-isdir-path" class="headerlink" title="os.path.isdir(path)"></a>os.path.isdir(path)</h1><p>判断路径是不是文件夹，路径不存在同样返回False</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.path.isdir(<span class="string">"E:\\abc\\efg.txt"</span>)</span></span><br><span class="line">False</span><br></pre></td></tr></table></figure>
-
-<h1 id="os-path-isfile-path"><a href="#os-path-isfile-path" class="headerlink" title="os.path.isfile(path)"></a>os.path.isfile(path)</h1><p>判断路径是不是文件，路径不存在同样返回False</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.path.isfile(<span class="string">"E:\\abc\\efg.txt"</span>)</span></span><br><span class="line">False</span><br></pre></td></tr></table></figure>
-
-<h1 id="os-path-getsize-path"><a href="#os-path-getsize-path" class="headerlink" title="os.path.getsize(path)"></a>os.path.getsize(path)</h1><p>获取文件大小，单位字节，文件不存在则报错，不能直接用于文件夹</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.path.getsize(<span class="string">"D:\\2019-11-07.txt"</span>)</span></span><br><span class="line">5973</span><br></pre></td></tr></table></figure>
-
-<h1 id="os-path-getctime-path"><a href="#os-path-getctime-path" class="headerlink" title="os.path.getctime(path)"></a>os.path.getctime(path)</h1><p>获取文件创建时间</p>
-<h1 id="os-path-getmtime-path"><a href="#os-path-getmtime-path" class="headerlink" title="os.path.getmtime(path)"></a>os.path.getmtime(path)</h1><p>获取文件最后修改时间</p>
-<h1 id="os-path-getatime-path"><a href="#os-path-getatime-path" class="headerlink" title="os.path.getatime(path)"></a>os.path.getatime(path)</h1><p>获取文件最近访问时间</p>
-
+<h1 id="从文件反序列化读取Python对象"><a href="#从文件反序列化读取Python对象" class="headerlink" title="从文件反序列化读取Python对象"></a>从文件反序列化读取Python对象</h1><p>pickle.load(obj, file)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import pickle</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; file = open(<span class="string">'pickle.txt'</span>,<span class="string">'rb'</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; newdict = pickle.load(file)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; file.close()</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; newdict</span></span><br><span class="line">&#123;'id': 123, 'name': 'abc'&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -300,7 +275,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/14/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97os.path%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8E%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/18/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97pickle%E2%80%94%E2%80%94%E5%BA%8F%E5%88%97%E5%8C%96%E6%95%B0%E6%8D%AE/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,17 +289,17 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/14/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97pickle%E2%80%94%E2%80%94%E5%BA%8F%E5%88%97%E5%8C%96%E6%95%B0%E6%8D%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/01/18/Python%E7%88%AC%E8%99%AB%E4%B9%8Brequest%E6%A8%A1%E5%9D%97%E2%80%94%E2%80%94%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Python常用模块pickle——序列化数据
+          Python爬虫之request模块——网络请求
         
       </div>
     </a>
   
   
-    <a href="/2020/01/14/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97os%E2%80%94%E2%80%94%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/01/18/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97os%E2%80%94%E2%80%94%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Python常用模块os——与操作系统交互</div>
       <i class="icon-circle-right"></i>
     </a>
