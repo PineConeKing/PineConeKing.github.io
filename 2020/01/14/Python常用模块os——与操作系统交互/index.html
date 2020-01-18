@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="os.getcwd()返回当前工作目录绝对路径 123&amp;gt;&amp;gt;&amp;gt; import os&amp;gt;&amp;gt;&amp;gt; print(os.getcwd())C:\Users\AppData\Local\Programs\Python\Python37  os.chdir(newpath)更改当前工作目录 123456&amp;gt;&amp;gt;&amp;gt; import os&amp;gt;&amp;gt;&amp;gt; prin">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python常用模块os——与操作系统交互">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;14&#x2F;Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97os%E2%80%94%E2%80%94%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92&#x2F;index.html">
+<meta property="og:site_name" content="松鼠大帝">
+<meta property="og:description" content="os.getcwd()返回当前工作目录绝对路径 123&amp;gt;&amp;gt;&amp;gt; import os&amp;gt;&amp;gt;&amp;gt; print(os.getcwd())C:\Users\AppData\Local\Programs\Python\Python37  os.chdir(newpath)更改当前工作目录 123456&amp;gt;&amp;gt;&amp;gt; import os&amp;gt;&amp;gt;&amp;gt; prin">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-14T10:42:41.819Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/14/Python常用模块os——与操作系统交互/"/>
+
+
+
+
+
+  <title>Python常用模块os——与操作系统交互 | 松鼠大帝</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">松鼠大帝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">松鼠大帝</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/14/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97os%E2%80%94%E2%80%94%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松鼠大帝">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松鼠大帝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python常用模块os——与操作系统交互</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-14T18:39:00+08:00">
+                2020-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="os-getcwd"><a href="#os-getcwd" class="headerlink" title="os.getcwd()"></a>os.getcwd()</h1><p>返回当前工作目录绝对路径</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(os.getcwd())</span></span><br><span class="line">C:\Users\AppData\Local\Programs\Python\Python37</span><br></pre></td></tr></table></figure>
+
+<h1 id="os-chdir-newpath"><a href="#os-chdir-newpath" class="headerlink" title="os.chdir(newpath)"></a>os.chdir(newpath)</h1><p>更改当前工作目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(os.getcwd())</span></span><br><span class="line">C:\Users\AppData\Local\Programs\Python\Python37</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.chdir(<span class="string">"C:\\"</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(os.getcwd())</span></span><br><span class="line">C:\</span><br></pre></td></tr></table></figure>
+
+<h1 id="os-mkdir-dirpath"><a href="#os-mkdir-dirpath" class="headerlink" title="os.mkdir(dirpath)"></a>os.mkdir(dirpath)</h1><p>创建单级目录，其父目录必须存在，否则应使用os.makedirs()创建多级目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.mkdir(<span class="string">"test1"</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="os-makedirs-dirpath1-dirpath2"><a href="#os-makedirs-dirpath1-dirpath2" class="headerlink" title="os.makedirs(dirpath1\dirpath2)"></a>os.makedirs(dirpath1\dirpath2)</h1><p>创建多级目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.makedirs(<span class="string">"test2\\test3"</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="os-removedirs-dirpath-filename"><a href="#os-removedirs-dirpath-filename" class="headerlink" title="os.removedirs(dirpath\filename)"></a>os.removedirs(dirpath\filename)</h1><p>删除空目录，并递归到上一级目录，如若上一级目录也为空，则也删除，以此类推，最下层目录非空则报错</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.removedirs(<span class="string">"test2\\test3"</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="os-remove-filepath"><a href="#os-remove-filepath" class="headerlink" title="os.remove(filepath)"></a>os.remove(filepath)</h1><p>删除文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.remove(<span class="string">"test.txt"</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="os-listdir-dirpath"><a href="#os-listdir-dirpath" class="headerlink" title="os.listdir(dirpath)"></a>os.listdir(dirpath)</h1><p>返回一个列表，列出文件夹内所有文件及子文件夹的名称</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.listdir(<span class="string">"C:\\"</span>)</span></span><br><span class="line">['Documents and Settings', 'Intel', 'pagefile.sys', 'Program Files', 'Program Files (x86)', 'ProgramData', 'System Volume Information', 'temp', 'Users', 'Windows']</span><br></pre></td></tr></table></figure>
+
+<h1 id="os-walk-dirpath"><a href="#os-walk-dirpath" class="headerlink" title="os.walk(dirpath)"></a>os.walk(dirpath)</h1><p>返回一个生成器，遍历文件夹及其所有子孙文件夹内所有文件夹及文件。<br>每一项为一个路径信息的元组，元组第一项为该绝对路径，第二项为该路径下文件夹的列表，第三项为该路径下文件的列表</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="keyword">for</span> item <span class="keyword">in</span> os.walk(r<span class="string">"E:\素材"</span>):</span></span><br><span class="line">	print(item)</span><br><span class="line"></span><br><span class="line">('E:\\素材', ['游戏人生', '表情包'], ['035曦红柿【人女】导入图.jpg', 'code-wallpaper-8.jpg'])</span><br><span class="line">('E:\\素材\\游戏人生', ['图片'], [])</span><br><span class="line">('E:\\素材\\游戏人生\\图片', [], ['5ab5c9ea15ce36d380894f9931f33a87e850b18e.jpg', '7af40ad162d9f2d387245a7fa2ec8a136327cc6d.jpg', 'c64edcc451da81cb9482033c5e66d016082431ff.jpg'])</span><br></pre></td></tr></table></figure>
+
+<h1 id="os-rename-oldname-newname"><a href="#os-rename-oldname-newname" class="headerlink" title="os.rename(oldname,newname)"></a>os.rename(oldname,newname)</h1><p>重命名文件或目录</p>
+<h1 id="os-stat-filepath"><a href="#os-stat-filepath" class="headerlink" title="os.stat(filepath)"></a>os.stat(filepath)</h1><p>返回文件属性信息对象</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt;&gt; os.stat(<span class="string">"C:\\aow_drv.log"</span>)</span></span><br><span class="line">os.stat_result(st_mode=33206, st_ino=41376821576981610, st_dev=2818738962, st_nlink=1, st_uid=0, st_gid=0, st_size=4429383, st_atime=1556684018, st_mtime=1556684018, st_ctime=1556619281)</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; state = os.stat(<span class="string">"C:\\aow_drv.log"</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; state.st_mode</span></span><br><span class="line">33206</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; state.st_size</span></span><br><span class="line">4429383</span><br></pre></td></tr></table></figure>
+
+<h1 id="os-system-command"><a href="#os-system-command" class="headerlink" title="os.system(command)"></a>os.system(command)</h1><p>运行系统命令，在Windows中相当于cmd命令，命令成功执行则返回0，否则返回1</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; os.system(<span class="string">"Notepad.exe"</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="os-popen-command"><a href="#os-popen-command" class="headerlink" title="os.popen(command)"></a>os.popen(command)</h1><p>同样是运行系统命令，但返回执行结果内容，通过 .read() 获取</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import os</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; result = os.popen(<span class="string">"ipconfig"</span>)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; result.read()</span></span><br><span class="line">'\nWindows IP 配置\n\n\n以太网适配器 以太网:\n\n   媒体状态  . . . . . . . . . . . . '</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/14/Python%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9D%97os.path%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E4%B8%8E%E8%B7%AF%E5%BE%84%E6%93%8D%E4%BD%9C/" rel="prev" title="Python常用模块os.path——文件与路径操作">
+                Python常用模块os.path——文件与路径操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">松鼠大帝</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#os-getcwd"><span class="nav-number">1.</span> <span class="nav-text">os.getcwd()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-chdir-newpath"><span class="nav-number">2.</span> <span class="nav-text">os.chdir(newpath)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-mkdir-dirpath"><span class="nav-number">3.</span> <span class="nav-text">os.mkdir(dirpath)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-makedirs-dirpath1-dirpath2"><span class="nav-number">4.</span> <span class="nav-text">os.makedirs(dirpath1\dirpath2)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-removedirs-dirpath-filename"><span class="nav-number">5.</span> <span class="nav-text">os.removedirs(dirpath\filename)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-remove-filepath"><span class="nav-number">6.</span> <span class="nav-text">os.remove(filepath)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-listdir-dirpath"><span class="nav-number">7.</span> <span class="nav-text">os.listdir(dirpath)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-walk-dirpath"><span class="nav-number">8.</span> <span class="nav-text">os.walk(dirpath)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-rename-oldname-newname"><span class="nav-number">9.</span> <span class="nav-text">os.rename(oldname,newname)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-stat-filepath"><span class="nav-number">10.</span> <span class="nav-text">os.stat(filepath)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-system-command"><span class="nav-number">11.</span> <span class="nav-text">os.system(command)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#os-popen-command"><span class="nav-number">12.</span> <span class="nav-text">os.popen(command)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松鼠大帝</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
